@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC, memo } from 'react'
 
-const page: React.FC = React.memo(() => {
+const page: FC = memo(() => {
   return (
       <>aa</>
   )
