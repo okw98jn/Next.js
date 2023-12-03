@@ -7,7 +7,7 @@ type IconProps = {
     color?: string;
 }
 
-const Icon: FC<IconProps> = memo(({ icon, size = '15px', color = '#000000' }) => {
+const Icon: FC<IconProps> = memo(({ icon, size = '15px', color = '#333333' }) => {
     return (
         <IconContext.Provider value={{ color: color, size: size }}>
             {icon}

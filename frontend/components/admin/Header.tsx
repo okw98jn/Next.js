@@ -4,7 +4,7 @@ import React, { FC, memo } from "react"
 import styles from '../../styles/admin/header.module.css'
 import Link from "next/link"
 import HeaderNavigationMenu from "./HeaderNavigationMenu"
-
+import HeaderDropdownMenu from "./HeaderDropdownMenu"
 
 const Header: FC = memo(() => {
     return (
@@ -15,7 +15,10 @@ const Header: FC = memo(() => {
                 </Link>
             </div>
             <div>
-                <HeaderNavigationMenu />
+                <div className="flex items-center">
+                    <HeaderNavigationMenu />
+                    <div className="ml-4"><HeaderDropdownMenu /></div>
+                </div>
             </div>
         </header >
     )
