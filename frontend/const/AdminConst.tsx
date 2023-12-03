@@ -25,13 +25,13 @@ export const headerMenuList = [
             {
                 key: HeaderMenuListAdminEnum.List,
                 title: '管理者一覧',
-                href: '/',
+                href: '/admin/admin/list',
                 icon: <TbListSearch />,
             },
             {
                 key: HeaderMenuListAdminEnum.New,
                 title: '管理者登録',
-                href: '/',
+                href: '/admin/admin/new',
                 icon: <FaUserPlus  />,
             },
         ]
