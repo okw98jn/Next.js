@@ -55,3 +55,14 @@ export const headerMenuList = [
         ]
     },
 ]
+
+//管理者テーブル情報
+export const AdminTheadInfo = [
+    'No',
+    '氏名',
+    'ログインID',
+    '権限',
+    'ステータス',
+    '登録日',
+    '',
+];

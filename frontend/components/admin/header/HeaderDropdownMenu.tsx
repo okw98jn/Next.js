@@ -18,7 +18,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
-import Icon from "../atoms/Icon"
+import Icon from "@/components/atoms/Icon";
 
 const HeaderDropdownMenu: FC = memo(() => {
     return (

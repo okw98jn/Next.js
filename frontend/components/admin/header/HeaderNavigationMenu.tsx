@@ -11,7 +11,7 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { headerMenuList } from "@/const/AdminConst"
-import Icon from "../atoms/Icon"
+import Icon from "@/components/atoms/Icon"
 
 const HeaderNavigationMenu: FC = memo(() => {
     return (
