@@ -10,8 +10,8 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { headerMenuList } from "@/const/AdminConst"
 import Icon from "@/components/atoms/Icon"
+import { headerMenuList } from "@/app/admin/const/AdminConst"
 
 const HeaderNavigationMenu: FC = memo(() => {
     return (
