@@ -106,7 +106,7 @@ const page: FC = memo(() => {
                             <TableCell text={row.name} />
                             <TableCell text={row.name} />
                             <TableCell text={row.name} />
-                            <TableCellActions text={row.name} showPath='/' />
+                            <TableCellActions text={row.name} showPath='/' modalText={'管理者'} />
                         </TableRow>
                     ))}
                 </TableBody>
