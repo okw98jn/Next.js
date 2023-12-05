@@ -1,7 +1,7 @@
 "use client"
 
 import React, { FC, memo } from "react"
-import styles from '../../../styles/admin/header.module.css'
+import styles from '../../styles/header.module.css'
 import Link from "next/link"
 import HeaderNavigationMenu from "./HeaderNavigationMenu"
 import HeaderDropdownMenu from "./HeaderDropdownMenu"

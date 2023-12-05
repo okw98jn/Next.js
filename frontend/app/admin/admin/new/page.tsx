@@ -1,10 +1,10 @@
 "use client"
 
-import CardContainer from '@/components/admin/layout/CardContainer'
 import Icon from '@/components/atoms/Icon'
 import React, { FC, memo } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import Form from './Form'
+import CardContainer from '../../components/layout/CardContainer'
 
 const page: FC = memo(() => {
     return (

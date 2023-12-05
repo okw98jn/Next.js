@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import styles from '../../styles/admin/layout.module.css'
-import Header from '@/components/admin/header/Header'
+import styles from './styles/layout.module.css'
+import Header from './components/header/Header'
 
 export const metadata: Metadata = {
     title: 'Next.js | 管理画面',

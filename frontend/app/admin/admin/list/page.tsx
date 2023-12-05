@@ -1,13 +1,13 @@
 import React, { FC, memo } from 'react'
-import TableContainer from '@/components/admin/table/TableContainer'
-import TableCell from '@/components/admin/table/TableCell'
-import Thead from '@/components/admin/table/Thead'
-import TableTop from '@/components/admin/table/TableTop'
-import TableBody from '@/components/admin/table/TableBody'
-import Table from '@/components/admin/table/Table'
-import TableRow from '@/components/admin/table/TableRow'
-import TableCellActions from '@/components/admin/table/TableCellActions'
 import { AdminTheadInfo } from '../../const/AdminConst'
+import TableContainer from '../../components/table/TableContainer'
+import TableTop from '../../components/table/TableTop'
+import Thead from '../../components/table/Thead'
+import TableBody from '../../components/table/TableBody'
+import Table from '../../components/table/Table'
+import TableRow from '../../components/table/TableRow'
+import TableCell from '../../components/table/TableCell'
+import TableCellActions from '../../components/table/TableCellActions'
 
 const page: FC = memo(() => {
     const data = [

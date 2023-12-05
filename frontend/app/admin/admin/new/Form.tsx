@@ -6,8 +6,8 @@ import { FormProvider, useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import StoreValidation from './Validation'
 import { AdminNewType } from '../types/AdminType'
-import InputControl from '@/components/admin/form/InputControl'
-import SelectBox from '@/components/admin/form/SelectBox'
+import InputControl from '../../components/form/InputControl'
+import SelectBox from '../../components/form/SelectBox'
 
 const Form: FC = memo(() => {
     const form = useForm<AdminNewType>({
