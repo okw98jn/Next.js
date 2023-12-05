@@ -17,13 +17,19 @@ import {
 } from "@/components/ui/select"
 import { useFormContext } from "react-hook-form";
 
+type SelectItem = {
+    value: string;
+    text: string;
+}
+
 type Props = {
     name: string
     label: string
     placeholder: string
+    selectItems: SelectItem[]
 }
 
-const SelectBox: FC<Props> = memo(({ name, label, placeholder }) => {
+const SelectBox: FC<Props> = memo(({ name, label, placeholder, selectItems }) => {
     const { control } = useFormContext();
     return (
         <FormField
@@ -39,12 +45,12 @@ const SelectBox: FC<Props> = memo(({ name, label, placeholder }) => {
                             </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                            {selectItems.map((selectItem) => (
+                                <SelectItem key={selectItem.value} value={selectItem.value}>{selectItem.text}</SelectItem>
+                            ))}
                         </SelectContent>
                     </Select>
-                    <FormMessage />
+                    <FormMessage className='font-normal text-destructive' />
                 </FormItem>
             )}
         />

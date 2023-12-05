@@ -2,6 +2,8 @@ import { FaUserPlus } from "react-icons/fa6";
 import { TbListSearch } from "react-icons/tb";
 import { BiSolidCategory } from "react-icons/bi";
 
+
+//ヘッダー情報
 export enum HeaderMenuEnum {
     Admin = 1,
     Product,
@@ -66,3 +68,20 @@ export const AdminTheadInfo = [
     '登録日',
     '',
 ];
+
+//管理者権限
+export enum AdminRole {
+    Admin  = '0',
+    Normal = '1',
+}
+
+export const AdminRoleList = [
+    {
+        value: AdminRole.Admin,
+        text: '管理者',
+    },
+    {
+        value: AdminRole.Normal,
+        text: '一般',
+    },
+]

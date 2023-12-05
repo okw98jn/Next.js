@@ -8,12 +8,17 @@ import StoreValidation from './Validation'
 import { AdminNewType } from '../types/AdminType'
 import InputControl from '../../components/form/InputControl'
 import SelectBox from '../../components/form/SelectBox'
+import { AdminRoleList } from '../../const/AdminConst'
+import Radio from '../../components/form/Radio'
 
 const Form: FC = memo(() => {
     const form = useForm<AdminNewType>({
         resolver: zodResolver(StoreValidation),
         defaultValues: {
             name: "",
+            login_id: "",
+            role: "",
+            status: "",
         },
     })
 
@@ -25,8 +30,10 @@ const Form: FC = memo(() => {
         <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 w-1/2">
                 <InputControl name='name' label='名前' placeholder='山田太郎' />
-                <SelectBox name='role' label='権限' placeholder='権限を選択してください' />
-                <Button type="submit">Submit</Button>
+                <InputControl name='login_id' label='ログインID' placeholder='ログインID' />
+                <SelectBox name='role' label='権限' placeholder='権限を選択してください' selectItems={AdminRoleList} />
+                <Radio name='status' label='ステータス' radioItems={[]} />
+                <Button type="submit">登録</Button>
             </form>
         </FormProvider>
     )

@@ -29,7 +29,7 @@ const InputControl: FC<Props> = memo(({name, label, placeholder}) => {
                     <FormControl>
                         <Input placeholder={placeholder} {...field} />
                     </FormControl>
-                    <FormMessage className='font-normal text-red-700' />
+                    <FormMessage className='font-normal text-destructive' />
                 </FormItem>
             )}
         />
