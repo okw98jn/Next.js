@@ -85,3 +85,20 @@ export const AdminRoleList = [
         text: '一般',
     },
 ]
+
+//管理者ステータス
+export enum AdminStatus {
+    StatusValid   = '0',
+    StatusInValid = '1',
+}
+
+export const AdminStatusList = [
+    {
+        value: AdminStatus.StatusValid,
+        text: '管理者',
+    },
+    {
+        value: AdminStatus.StatusInValid,
+        text: '一般',
+    },
+]
