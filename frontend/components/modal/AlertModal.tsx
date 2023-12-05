@@ -23,8 +23,8 @@ const AlertModal: FC<Props> = memo(({ alertModalOpen, setAlertModalOpen, modalTe
                 <AlertDialogHeader>
                     <AlertDialogTitle>{modalText}を削除しますか?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        <p>削除した{modalText}を元に戻すことはできません</p>
-                        <p>{modalText}を削除しますか？</p>
+                        <span className='block'>削除した{modalText}を元に戻すことはできません</span>
+                        <span className='block'>{modalText}を削除しますか？</span>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

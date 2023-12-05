@@ -4,16 +4,17 @@ import TableDropdownMenu from './TableDropdownMenu'
 type TableCellActionsProps = {
     text: string;
     showPath: string;
+    editForm: React.ReactNode;
     modalText: string;
 }
 
-const TableCellActions: FC<TableCellActionsProps> = memo(({ text, showPath, modalText }) => {
+const TableCellActions: FC<TableCellActionsProps> = memo(({ text, showPath, editForm, modalText }) => {
     return (
         <td className="whitespace-nowrap">
             <div className="px-1 py-3">
                 <div className="flex items-center gap-x-3">
                     <span className="block text-sm text-gray-500">
-                        <TableDropdownMenu text={text} showPath={showPath} modalText={modalText} />
+                        <TableDropdownMenu text={text} showPath={showPath} editForm={editForm} modalText={modalText} />
                     </span>
                 </div>
             </div>
