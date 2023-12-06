@@ -9,6 +9,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import useShowToast from '@/hooks/useShowToast';
 
 type Props = {
     alertModalOpen: boolean;
@@ -16,7 +17,12 @@ type Props = {
     modalText: string;
 }
 
+
 const AlertModal: FC<Props> = memo(({ alertModalOpen, setAlertModalOpen, modalText }) => {
+    const showToast = useShowToast();
+    const handleClick = () => {
+        showToast({ message: '管理者情報を削除しました', variant: 'success' });
+    }
     return (
         <AlertDialog open={alertModalOpen} onOpenChange={setAlertModalOpen}>
             <AlertDialogContent>
@@ -29,7 +35,7 @@ const AlertModal: FC<Props> = memo(({ alertModalOpen, setAlertModalOpen, modalTe
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel className='w-24'>キャンセル</AlertDialogCancel>
-                    <AlertDialogAction className='w-24'>削除</AlertDialogAction>
+                    <AlertDialogAction className='w-24' onClick={handleClick}>削除</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

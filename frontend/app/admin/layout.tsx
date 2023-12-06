@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import styles from './styles/layout.module.css'
 import Header from './components/header/Header'
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
     title: 'Next.js | 管理画面',
@@ -18,6 +19,7 @@ export default function RootLayout({
                 <Header />
                 {children}
             </div>
+            <Toaster />
         </div>
     )
 }
