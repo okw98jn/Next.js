@@ -28,12 +28,16 @@ const Form: FC = memo(() => {
 
     return (
         <FormProvider {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 w-1/2">
-                <InputControl name='name' label='名前' placeholder='山田太郎' />
-                <InputControl name='login_id' label='ログインID' placeholder='ログインID' />
-                <SelectBox name='role' label='権限' placeholder='権限を選択してください' selectItems={AdminRoleList} />
-                <Radio name='status' label='ステータス' radioItems={AdminStatusList} />
-                <Button type="submit">登録</Button>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-1/2">
+                <div className="space-y-3">
+                    <InputControl name='name' label='名前' placeholder='山田太郎' />
+                    <InputControl name='login_id' label='ログインID' placeholder='ログインID' />
+                    <SelectBox name='role' label='権限' placeholder='権限を選択してください' selectItems={AdminRoleList} />
+                    <Radio name='status' label='ステータス' radioItems={AdminStatusList} />
+                </div>
+                <div className='mt-6'>
+                    <Button type="submit">登録</Button>
+                </div>
             </form>
         </FormProvider>
     )
