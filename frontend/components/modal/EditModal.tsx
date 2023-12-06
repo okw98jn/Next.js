@@ -16,7 +16,7 @@ type Props = {
 
 const EditModal: FC<Props> = memo(({ editModalOpen, setEditModalOpen, modalText, editForm }) => {
     const dialogTitle = `${modalText}編集`;
-    const dialogDescription = `${modalText}を編集することができます`;
+    const dialogDescription = `${modalText}の情報を編集することができます`;
 
     return (
         <Dialog open={editModalOpen} onOpenChange={setEditModalOpen}>
