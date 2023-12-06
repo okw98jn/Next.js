@@ -1,6 +1,6 @@
 import * as z from "zod"
 
-const StoreValidation = z.object({
+const StoreValidator = z.object({
     name: z.string().min(1, {
         message: "名前は必須です",
     }),
@@ -15,4 +15,4 @@ const StoreValidation = z.object({
     }),
 })
 
-export default StoreValidation
+export default StoreValidator

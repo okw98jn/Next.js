@@ -4,7 +4,7 @@ import React, { FC, memo } from 'react'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FormProvider, useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import StoreValidation from './Validation'
+import StoreValidator from './StoreValidator'
 import { AdminNewType } from '../types/AdminType'
 import InputControl from '../../components/form/InputControl'
 import SelectBox from '../../components/form/SelectBox'
@@ -13,7 +13,7 @@ import Radio from '../../components/form/Radio'
 
 const Form: FC = memo(() => {
     const form = useForm<AdminNewType>({
-        resolver: zodResolver(StoreValidation),
+        resolver: zodResolver(StoreValidator),
         defaultValues: {
             name: "",
             login_id: "",
