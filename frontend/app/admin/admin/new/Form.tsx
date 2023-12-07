@@ -10,8 +10,11 @@ import InputControl from '../../components/form/InputControl'
 import SelectBox from '../../components/form/SelectBox'
 import { AdminRoleList, AdminStatus, AdminStatusList } from '../../const/AdminConst'
 import Radio from '../../components/form/Radio'
+import { useShowToast } from '@/hooks/useShowToast'
 
 const Form: FC = memo(() => {
+    const showToast = useShowToast();
+
     const form = useForm<AdminNewType>({
         resolver: zodResolver(StoreValidator),
         defaultValues: {
@@ -24,6 +27,7 @@ const Form: FC = memo(() => {
 
     function onSubmit(values: AdminNewType) {
         console.log(values)
+        showToast({ message: '管理者を登録しました', variant: 'success' });
     }
 
     return (

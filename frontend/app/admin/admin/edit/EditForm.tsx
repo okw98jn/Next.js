@@ -10,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { AdminRoleList, AdminStatus, AdminStatusList } from '../../const/AdminConst';
 import { AdminNewType } from '../types/AdminType';
 import UpdateValidator from './UpdateValidator';
-import {useShowToast} from '@/hooks/useShowToast';
+import { useShowToast } from '@/hooks/useShowToast';
 
 type Props = {
     id: number;
@@ -32,7 +32,8 @@ const EditForm: FC<Props> = memo(({ id, setEditModalOpen }) => {
     function onSubmit(values: AdminNewType) {
         console.log(values)
         setEditModalOpen && setEditModalOpen(false);
-        showToast({ message: '管理者情報を更新しました', variant: 'success' });    }
+        showToast({ message: '管理者情報を更新しました', variant: 'success' });
+    }
 
     return (
         <FormProvider {...form}>
