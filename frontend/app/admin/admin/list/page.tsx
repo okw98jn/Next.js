@@ -95,7 +95,7 @@ const page: FC = memo(() => {
     ]
     return (
         <TableContainer>
-            <TableTop title='管理者一覧' />
+            <TableTop title='管理者一覧' newPath='/admin/admin/new' />
             <Table>
                 <Thead trList={AdminTheadInfo} />
                 <TableBody>

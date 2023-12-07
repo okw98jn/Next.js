@@ -9,7 +9,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import useShowToast from '@/hooks/useShowToast';
+import {useShowToast} from '@/hooks/useShowToast';
 
 type Props = {
     alertModalOpen: boolean;
