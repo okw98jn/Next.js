@@ -17,7 +17,10 @@ const Header: FC = memo(() => {
             <div>
                 <div className="flex items-center">
                     <HeaderNavigationMenu />
-                    <div className="ml-4"><HeaderDropdownMenu /></div>
+                    <p className="text-white border-s border-gray-300 ml-8">a</p>
+                    <div className="ml-4">
+                        <HeaderDropdownMenu />
+                    </div>
                 </div>
             </div>
         </header >
