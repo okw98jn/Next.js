@@ -10,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { AdminRoleList, AdminStatus, AdminStatusList } from '../../const/AdminConst';
 import { AdminNewType } from '../types/AdminType';
 import UpdateValidator from './UpdateValidator';
-import useShowToast from '@/hooks/useShowToast';
+import {useShowToast} from '@/hooks/useShowToast';
 
 type Props = {
     id: number;
