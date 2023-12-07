@@ -40,7 +40,7 @@ const Form: FC = memo(() => {
                     <Radio name='status' label='ステータス' radioItems={AdminStatusList} />
                 </div>
                 <div className='mt-6'>
-                    <Button type="submit">登録</Button>
+                    <Button type="submit" className='w-full'>登録</Button>
                 </div>
             </form>
         </FormProvider>
