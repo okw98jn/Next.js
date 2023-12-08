@@ -12,24 +12,3 @@ services:
     command: sh -c "npm run dev"
     ports:
       - "3000:3000"
-
-  db:
-    container_name: mysql
-    build: ./docker/mysql
-    ports:
-      - 3306:3306
-    volumes:
-      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-      - mysql-volume:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_USER: ${ROOTUSER}
-      MYSQL_ROOT_PASSWORD: ${ROOTPASS}
-      MYSQL_DATABASE: ${DATABASE}
-      MYSQL_USER: ${USERNAME}
-      MYSQL_PASSWORD: ${USERPASS}
-      TZ: "Asia/Tokyo"
-    env_file:
-      - .env
-
-volumes:
-  mysql-volume:
