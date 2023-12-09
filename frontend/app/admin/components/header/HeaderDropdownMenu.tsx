@@ -62,5 +62,6 @@ const MenuItem: FC<{ icon: ReactNode; href: string; label: string }> = memo(({ i
 ));
 
 HeaderDropdownMenu.displayName = 'HeaderDropdownMenu'
+MenuItem.displayName = 'MenuItem'
 
 export default HeaderDropdownMenu
