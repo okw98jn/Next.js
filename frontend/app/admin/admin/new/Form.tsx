@@ -11,6 +11,7 @@ import SelectBox from '../../components/form/SelectBox'
 import { AdminRoleList, AdminStatus, AdminStatusList } from '../../const/AdminConst'
 import Radio from '../../components/form/Radio'
 import { useShowToast } from '@/hooks/useShowToast'
+import { useRouter } from 'next/navigation'
 
 const FORM_LABELS = {
     name: '名前',
@@ -33,6 +34,7 @@ const DEFAULT_VALUES: AdminNewType = {
 };
 
 const Form: FC = memo(() => {
+    const router = useRouter();
     const showToast = useShowToast();
 
     const form = useForm<AdminNewType>({
@@ -42,6 +44,7 @@ const Form: FC = memo(() => {
 
     function onSubmit(values: AdminNewType) {
         console.log(values)
+        router.push('/admin/admin/list')
         showToast({ message: '管理者を登録しました', variant: 'success' });
     }
 
