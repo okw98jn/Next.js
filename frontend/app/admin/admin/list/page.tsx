@@ -11,88 +11,14 @@ import TableCellActions from '../../components/table/TableCellActions'
 import EditForm from '../edit/EditForm'
 
 const page: FC = memo(() => {
-    const data = [
-        {
-            id: 1,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 2,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 3,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 4,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 5,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 6,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 7,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 8,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 9,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-        {
-            id: 10,
-            name: 'abc',
-            login_id: 'abc',
-            role: 'abc',
-            status: 'abc',
-            start: 'abc',
-        },
-    ]
+    const data = Array.from({ length: 50 }, (_, i) => ({
+        id: i + 1,
+        name: 'abc' + i,
+        login_id: 'abc',
+        role: 'abc',
+        status: 'abc',
+        start: 'abc',
+    }));
     return (
         <TableContainer>
             <TableTop title='管理者一覧' newPath='/admin/admin/new' />

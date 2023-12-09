@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import React, { FC, memo, useCallback } from 'react'
 import {
     AlertDialog,
     AlertDialogAction,
@@ -9,7 +9,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import {useShowToast} from '@/hooks/useShowToast';
+import { useShowToast } from '@/hooks/useShowToast';
 
 type Props = {
     alertModalOpen: boolean;
@@ -17,12 +17,12 @@ type Props = {
     modalText: string;
 }
 
-
 const AlertModal: FC<Props> = memo(({ alertModalOpen, setAlertModalOpen, modalText }) => {
     const showToast = useShowToast();
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         showToast({ message: '管理者情報を削除しました', variant: 'success' });
-    }
+    }, [showToast]);
+
     return (
         <AlertDialog open={alertModalOpen} onOpenChange={setAlertModalOpen}>
             <AlertDialogContent>

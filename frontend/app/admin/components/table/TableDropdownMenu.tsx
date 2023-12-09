@@ -1,6 +1,6 @@
 "use client"
 
-import React, { FC, memo, useState } from 'react'
+import React, { FC, memo, useCallback, useState } from 'react'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -33,14 +33,12 @@ const TableDropdownMenu: FC<TableDropdownMenuProps> = memo(({ text, showPath, ed
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [alertModalOpen, setAlertModalOpen] = useState(false);
 
-    const handleEditClick = () => {
-        // 編集がクリックされたときに、EditModalを開く処理
+    const handleEditClick = useCallback(() => {
         setEditModalOpen(true);
-    };
-    const handleDeleteClick = () => {
-        // 削除がクリックされたときに、AlertModalを開く処理
+    }, []);
+    const handleDeleteClick = useCallback(() => {
         setAlertModalOpen(true);
-    };
+    }, []);
 
     return (
         <>

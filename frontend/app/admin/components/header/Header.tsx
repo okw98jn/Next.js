@@ -6,13 +6,13 @@ import Link from "next/link"
 import HeaderNavigationMenu from "./HeaderNavigationMenu"
 import HeaderDropdownMenu from "./HeaderDropdownMenu"
 
+const LogoLink = <Link href={'/'}><h2 className="text-xl font-medium">Next.js</h2></Link>; // Linkコンポーネントを一度だけレンダリング
+
 const Header: FC = memo(() => {
     return (
         <header className={styles.header}>
             <div>
-                <Link href={'/'}>
-                    <h2 className="text-xl font-medium">Next.js</h2>
-                </Link>
+                {LogoLink}
             </div>
             <div>
                 <div className="flex items-center">

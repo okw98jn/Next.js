@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import React, { FC, createContext, memo, useContext } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -6,6 +6,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
+
+type EditModalContextType = {
+    setEditModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const EditModalContext = createContext<EditModalContextType | undefined>(undefined);
+
+export const useEditModal = () => {
+    const context = useContext(EditModalContext);
+    return context;
+};
 
 type Props = {
     editModalOpen: boolean;
@@ -28,8 +39,10 @@ const EditModal: FC<Props> = memo(({ editModalOpen, setEditModalOpen, modalText,
                         <span className='block'>編集したい項目を入力してください</span>
                     </DialogDescription>
                 </DialogHeader>
-                {/* 各ドメインに対応 */}
-                {React.cloneElement(editForm as React.ReactElement, { setEditModalOpen })}
+                <EditModalContext.Provider value={{ setEditModalOpen }}>
+                    {/* 各ドメインに対応 */}
+                    {editForm}
+                </EditModalContext.Provider>
             </DialogContent>
         </Dialog>
     )

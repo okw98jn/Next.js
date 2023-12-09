@@ -1,6 +1,6 @@
 "use client"
 
-import React, { FC, memo, useState } from "react"
+import React, { FC, ReactNode, memo, useCallback, useState } from "react"
 import {
     ChevronDown,
     LogOut,
@@ -21,9 +21,12 @@ import Link from "next/link"
 
 const HeaderDropdownMenu: FC = memo(() => {
     const [open, setOpen] = useState(false);
+    const handleMouseEnter = useCallback(() => setOpen(true), []);
+    const handleMouseLeave = useCallback(() => setOpen(false), []);
+
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
-            <div onMouseEnter={() => setOpen(true)}>
+            <div onMouseEnter={handleMouseEnter}>
                 <DropdownMenuTrigger asChild>
                     <div
                         className="group cursor-pointer inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
@@ -34,35 +37,29 @@ const HeaderDropdownMenu: FC = memo(() => {
                         />
                     </div>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" onMouseLeave={() => setOpen(false)}>
+                <DropdownMenuContent className="w-56" onMouseLeave={handleMouseLeave}>
                     <DropdownMenuLabel>山田太郎</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            <User className="mr-2 h-4 w-4" />
-                            <Link href={'/'} className="flex-1">
-                                <p className="text-xs">マイページ</p>
-                            </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <Settings className="mr-2 h-4 w-4" />
-                            <Link href={'/'} className="flex-1">
-                                <span className="text-xs">設定</span>
-                            </Link>
-                        </DropdownMenuItem>
+                        <MenuItem icon={<User className="mr-2 h-4 w-4" />} href="/" label="マイページ" />
+                        <MenuItem icon={<Settings className="mr-2 h-4 w-4" />} href="/" label="設定" />
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        <LogOut className="mr-2 h-4 w-4" />
-                        <Link href={'/'} className="flex-1">
-                            <span className="text-xs">ログアウト</span>
-                        </Link>
-                    </DropdownMenuItem>
+                    <MenuItem icon={<LogOut className="mr-2 h-4 w-4" />} href="/" label="ログアウト" />
                 </DropdownMenuContent>
             </div>
         </DropdownMenu>
     )
 })
+
+const MenuItem: FC<{ icon: ReactNode; href: string; label: string }> = memo(({ icon, href, label }) => (
+    <DropdownMenuItem>
+        {icon}
+        <Link href={href} className="flex-1">
+            <span className="text-xs">{label}</span>
+        </Link>
+    </DropdownMenuItem>
+));
 
 HeaderDropdownMenu.displayName = 'HeaderDropdownMenu'
 
