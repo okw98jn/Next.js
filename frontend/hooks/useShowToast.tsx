@@ -10,7 +10,7 @@ type Props = {
 export const useShowToast = () => {
     const { toast } = useToast();
     const showToast = useCallback(({ message, variant = 'default' }: Props) => {
-        const icon  = switchIcon(variant);
+        const icon = switchIcon(variant);
         const title = createToastMessage(message, icon)
         toast({
             title: title,
@@ -28,7 +28,6 @@ const switchIcon = (variant: string) => {
         case 'destructive':
             return <AlertTriangle className="mr-2" size={20} />;
         case 'success':
-            return <CheckIcon className="mr-2" size={20} />;
         default:
             return <CheckIcon className="mr-2" size={20} />;
     }
