@@ -18,4 +18,5 @@ const Paginate: FC<Props> = memo(({ count, page, onChange }) => (
     </div>
 ));
 
+Paginate.displayName = 'Paginate'
 export default Paginate;
