@@ -2,36 +2,35 @@ import { FaUserPlus } from "react-icons/fa6";
 import { TbListSearch } from "react-icons/tb";
 import { BiSolidCategory } from "react-icons/bi";
 
-
 //ヘッダー情報
-export enum HeaderMenuEnum {
+enum HeaderMenu {
     Admin = 1,
     Product,
 }
 
-export enum HeaderMenuListAdminEnum {
+enum HeaderMenuListAdmin {
     List = 1,
     New,
 }
 
-export enum HeaderMenuListProductEnum {
+enum HeaderMenuListProduct {
     CategoryList = 1,
     CategoryNew,
 }
 
 export const headerMenuList = [
     {
-        key: HeaderMenuEnum.Admin,
+        key: HeaderMenu.Admin,
         title: '管理者',
         Lists: [
             {
-                key: HeaderMenuListAdminEnum.List,
+                key: HeaderMenuListAdmin.List,
                 title: '管理者一覧',
                 href: '/admin/admin/list',
                 icon: <TbListSearch />,
             },
             {
-                key: HeaderMenuListAdminEnum.New,
+                key: HeaderMenuListAdmin.New,
                 title: '管理者登録',
                 href: '/admin/admin/new',
                 icon: <FaUserPlus  />,
@@ -39,17 +38,17 @@ export const headerMenuList = [
         ]
     },
     {
-        key: HeaderMenuEnum.Product,
+        key: HeaderMenu.Product,
         title: '商品',
         Lists: [
             {
-                key: HeaderMenuListProductEnum.CategoryList,
+                key: HeaderMenuListProduct.CategoryList,
                 title: 'カテゴリ一覧',
                 href: '/',
                 icon: <TbListSearch />,
             },
             {
-                key: HeaderMenuListProductEnum.CategoryNew,
+                key: HeaderMenuListProduct.CategoryNew,
                 title: 'カテゴリ登録',
                 href: '/',
                 icon: <BiSolidCategory  />,
