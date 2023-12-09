@@ -9,6 +9,7 @@ import TableCell from '../../components/table/TableCell'
 import TableCellActions from '../../components/table/TableCellActions'
 import EditForm from '../edit/EditForm'
 import { AdminListType } from '../types/AdminType'
+import ShowContents from '../show/ShowContents'
 
 type Props = {
     data: AdminListType[]
@@ -29,7 +30,7 @@ const TableContents: FC<Props> = memo(({ data }) => {
                             <TableCell text={row.name} />
                             <TableCell text={row.name} />
                             <TableCell text={row.name} />
-                            <TableCellActions text={row.name} editForm={<EditForm id={row.id} />} showPath='/' modalText={'管理者'} />
+                            <TableCellActions text={row.name} editForm={<EditForm id={row.id} />} showContents={<ShowContents id={row.id} />}  modalText={'管理者'} />
                         </TableRow>
                     ))}
                 </TableBody>
