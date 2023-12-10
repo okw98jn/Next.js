@@ -60,7 +60,7 @@ const EditForm: FC<Props> = memo(({ id, setEditModalOpen }) => {
                     <Radio name='status' label={FORM_LABELS.status} radioItems={AdminStatusList} />
                 </div>
                 <div className='mt-6'>
-                    <Button type="submit" className='w-full'>登録</Button>
+                    <Button type="submit" className='w-full'>編集</Button>
                 </div>
             </form>
         </FormProvider>

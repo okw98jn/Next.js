@@ -15,24 +15,28 @@ import {
     FileEdit,
     Info,
 } from "lucide-react"
-import Link from "next/link"
 import Icon from "@/components/atoms/Icon";
 import { CgMenuGridO } from "react-icons/cg";
 import { Button } from '@/components/ui/button'
-import AlertModal from '@/components/modal/AlertModal'
-import EditModal from '@/components/modal/EditModal'
+import AlertModal from '../modal/AlertModal';
+import EditModal from '../modal/EditModal';
+import ShowModal from '../modal/ShowModal';
 
 type TableDropdownMenuProps = {
     text: string;
-    showPath: string;
+    showContents: React.ReactNode;
     editForm: React.ReactNode;
     modalText: string;
 }
 
-const TableDropdownMenu: FC<TableDropdownMenuProps> = memo(({ text, showPath, editForm, modalText }) => {
+const TableDropdownMenu: FC<TableDropdownMenuProps> = memo(({ text, showContents, editForm, modalText }) => {
+    const [showModalOpen, setShowModalOpen] = useState(false);
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [alertModalOpen, setAlertModalOpen] = useState(false);
 
+    const handleShowClick = useCallback(() => {
+        setShowModalOpen(true);
+    }, []);
     const handleEditClick = useCallback(() => {
         setEditModalOpen(true);
     }, []);
@@ -54,9 +58,7 @@ const TableDropdownMenu: FC<TableDropdownMenuProps> = memo(({ text, showPath, ed
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
                             <Info className="mr-2 h-4 w-4" />
-                            <Link href={showPath} className="flex-1">
-                                <p className="text-xs">詳細</p>
-                            </Link>
+                            <span className="text-xs cursor-pointer flex-1" onClick={handleShowClick}>詳細</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <FileEdit className="mr-2 h-4 w-4" />
@@ -70,6 +72,7 @@ const TableDropdownMenu: FC<TableDropdownMenuProps> = memo(({ text, showPath, ed
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
+            <ShowModal showModalOpen={showModalOpen} setShowModalOpen={setShowModalOpen} showContents={showContents} />
             <EditModal editModalOpen={editModalOpen} setEditModalOpen={setEditModalOpen} modalText={modalText} editForm={editForm} />
             <AlertModal alertModalOpen={alertModalOpen} setAlertModalOpen={setAlertModalOpen} modalText={modalText} />
         </>
