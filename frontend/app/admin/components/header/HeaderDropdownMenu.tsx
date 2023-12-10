@@ -49,10 +49,10 @@ const HeaderDropdownMenu: FC = memo(() => {
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                             <MenuItem icon={<User className="mr-2 h-4 w-4" />} label="詳細" onClick={handleShowClick} />
-                            <MenuItem icon={<Settings className="mr-2 h-4 w-4" />} href="/" label="設定" />
+                            <MenuItem icon={<Settings className="mr-2 h-4 w-4" />} href="#" label="設定" />
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-                        <MenuItem icon={<LogOut className="mr-2 h-4 w-4" />} href="/" label="ログアウト" />
+                        <MenuItem icon={<LogOut className="mr-2 h-4 w-4" />} href="#" label="ログアウト" />
                     </DropdownMenuContent>
                 </div>
             </DropdownMenu>
