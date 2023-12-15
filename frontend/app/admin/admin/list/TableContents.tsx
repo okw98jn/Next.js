@@ -24,12 +24,12 @@ const TableContents: FC<Props> = memo(({ data }) => {
                 <TableBody>
                     {data.map((row) => (
                         <TableRow key={row.id}>
+                            <TableCell text={row.id} />
                             <TableCell text={row.name} />
-                            <TableCell text={row.name} />
-                            <TableCell text={row.name} />
-                            <TableCell text={row.name} />
-                            <TableCell text={row.name} />
-                            <TableCell text={row.name} />
+                            <TableCell text={row.login_id} />
+                            <TableCell text={row.role} />
+                            <TableCell text={row.status} />
+                            <TableCell text={row.created_at} />
                             <TableCellActions text={row.name} editForm={<EditForm id={row.id} />} showContents={<ShowContents id={row.id} />}  modalText={'管理者'} />
                         </TableRow>
                     ))}

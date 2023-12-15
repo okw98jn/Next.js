@@ -4,7 +4,7 @@ export type AdminListType = {
     login_id: string;
     role: string;
     status: string;
-    start: string;
+    created_at: string;
 }
 
 export type AdminNewType = {

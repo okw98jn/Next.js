@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react'
 
 type TableCellProps = {
-    text?: string | null;
+    text?: string | number | null;
 }
 
 const TableCell: FC<TableCellProps> = memo(({ text }) => {
