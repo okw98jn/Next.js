@@ -1,9 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
+import { BACKEND_URL } from '@/const/CommonConst';
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async (res: NextApiResponse) => {
     try {
-        const response = await fetch('http://localhost:8080/admin/');
+        const response = await fetch(BACKEND_URL + 'admin/');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

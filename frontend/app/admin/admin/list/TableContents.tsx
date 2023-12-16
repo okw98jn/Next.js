@@ -12,10 +12,11 @@ import { AdminListType } from '../types/AdminType'
 import ShowContents from '../show/ShowContents'
 
 type Props = {
-    data: AdminListType[]
+    data: AdminListType[];
+    isLoading?: boolean;
 }
 
-const TableContents: FC<Props> = memo(({ data }) => {
+const TableContents: FC<Props> = memo(({ data, isLoading }) => {
     return (
         <>
             <TableTop title='管理者一覧' newPath='/admin/admin/new' />
@@ -24,13 +25,13 @@ const TableContents: FC<Props> = memo(({ data }) => {
                 <TableBody>
                     {data.map((row) => (
                         <TableRow key={row.id}>
-                            <TableCell text={row.id} />
-                            <TableCell text={row.name} />
-                            <TableCell text={row.login_id} />
-                            <TableCell text={row.role} />
-                            <TableCell text={row.status} />
-                            <TableCell text={row.created_at} />
-                            <TableCellActions text={row.name} editForm={<EditForm id={row.id} />} showContents={<ShowContents id={row.id} />}  modalText={'管理者'} />
+                            <TableCell text={row.id} isLoading={isLoading} />
+                            <TableCell text={row.name} isLoading={isLoading} />
+                            <TableCell text={row.login_id} isLoading={isLoading} />
+                            <TableCell text={row.role} isLoading={isLoading} />
+                            <TableCell text={row.status} isLoading={isLoading} />
+                            <TableCell text={row.created_at} isLoading={isLoading} />
+                            <TableCellActions text={row.name} editForm={<EditForm id={row.id} />} showContents={<ShowContents id={row.id} />} modalText={'管理者'} />
                         </TableRow>
                     ))}
                 </TableBody>
